@@ -40,7 +40,8 @@ Import documents:
 
     mvn exec:java -Dexec.args="import /path/to/pdfs/ repository_name"
     
-    E.g:
+E.g:
+
     mvn exec:java -Dexec.args="import /home/user/mypdfs testdocs"
         
     
