@@ -444,24 +444,6 @@ public class Resource {
 
 	}
 
-	// /**
-	// * retrieve data about automatically extracted tables
-	// */
-	// @GET
-	// @Path("/document/{docid}/extract-tables")
-	// public Response getAutoExtractedTables(@PathParam("docid") Integer docid)
-	// throws JsonParseException, JsonMappingException, IOException {
-	//
-	// // String reponame = "test";
-	// // String workingset = "default";
-	// // RepositoryAccess repo = RepositoryAccess.getInstance(reponame,
-	// // workingset);
-	//
-	// Response result = Response.ok(dp.getAutoExtractedTables(docid),
-	// MediaType.TEXT_HTML).build();
-	// return result;
-	// }
-
 	/**
 	 * clear all tables of one page in a document
 	 * 
