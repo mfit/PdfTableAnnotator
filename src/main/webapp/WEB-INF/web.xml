@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	version="2.5">
 
@@ -7,17 +8,14 @@
 		<param-name>resteasy.scan</param-name>
 		<param-value>true</param-value>
 	</context-param>
-
 	<context-param>
 		<param-name>resteasy.resources</param-name>
 		<param-value>at.tugraz.kti.pdftable.frontend.Resource</param-value>
 	</context-param>
-	
 	<context-param>
       <param-name>resteasy.servlet.mapping.prefix</param-name>
       <param-value>/REST</param-value>
    </context-param>
-	
 	<context-param>
 		<param-name>resteasy.resource.method-interceptors</param-name>
 		<param-value>org.jboss.resteasy.core.ResourceMethodSecurityInterceptor</param-value>
@@ -27,17 +25,22 @@
 		<listener-class>org.jboss.resteasy.plugins.server.servlet.ResteasyBootstrap</listener-class>
 	</listener>
 
+	<!-- 
+	   Service
+	 -->
 	<servlet>
 		<servlet-name>Resteasy</servlet-name>
 		<servlet-class>org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher</servlet-class>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
-
 	<servlet-mapping>
 		<servlet-name>Resteasy</servlet-name>
 		<url-pattern>/REST/*</url-pattern>
 	</servlet-mapping>
 
+	<!-- 
+       Single-Document Editing
+     -->
 	<servlet>
         <servlet-name>Annotate</servlet-name>
             <servlet-class>at.tugraz.kti.pdftable.frontend.Annotate</servlet-class>
@@ -47,7 +50,9 @@
         <url-pattern>/annotate/*</url-pattern>
 	</servlet-mapping>
 	
-	
+	<!-- 
+       Upload
+     -->
     <servlet>
         <servlet-name>Upload</servlet-name>
         <servlet-class>at.tugraz.kti.pdftable.frontend.FileUpload</servlet-class>
@@ -56,7 +61,6 @@
         <servlet-name>Upload</servlet-name>
         <url-pattern>/repo</url-pattern>
     </servlet-mapping>
- 
     <filter>
         <filter-name>fileuploadfilter</filter-name>
         <filter-class>org.eclipse.jetty.servlets.MultiPartFilter</filter-class>
@@ -65,7 +69,6 @@
             <param-value>true</param-value>
         </init-param>
     </filter>
- 
     <filter-mapping>
         <filter-name>fileuploadfilter</filter-name>
         <url-pattern>/repo</url-pattern>
