@@ -1,7 +1,9 @@
 PdfTableAnnotator
 =================
 
-A tool to create table ground truth in PDF documents
+A tool to create table ground truth in PDF documents.
+
+Additional usage info see [usage.pdf](usage.pdf) .
 
 Installation 
 -------------
